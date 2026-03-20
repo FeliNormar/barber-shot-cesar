@@ -1,0 +1,11 @@
+📸 AGREGA TUS FOTOS AQUÍ
+
+Nombres sugeridos:
+- foto-cesar.jpg       → Foto principal del barbero César
+- sobre-cesar.jpg      → Foto para sección "Sobre César"  
+- corte-1.jpg          → Foto de corte para galería
+- corte-2.jpg          → Foto de corte para galería
+- barba-1.jpg          → Foto de barba para galería
+
+Formato recomendado: JPG o WebP
+Tamaño máximo: 1MB por foto (para que cargue rápido en celular)

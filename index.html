@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barber Shot César — Nuevo Ixcatlán, Veracruz</title>
+<meta name="description" content="Barber Shot César — Cortes modernos, arreglo de barba y afeitado clásico en Nuevo Ixcatlán, Veracruz. Formado en Eleganza Academy con instructores colombianos. Reserva por WhatsApp.">
+<meta name="keywords" content="barbería, cortes, fade, barba, afeitado, Nuevo Ixcatlán, Veracruz, Barber Shot César">
+<meta name="author" content="Feli Normar">
+<meta property="og:title" content="Barber Shot César — Nuevo Ixcatlán, Veracruz">
+<meta property="og:description" content="Cortes modernos, barba y afeitado clásico. Formado en Eleganza Academy. Reserva tu cita por WhatsApp.">
+<meta property="og:image" content="assets/images/logo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rojo:       #cc2222;
+  --rojo-osc:   #991a1a;
+  --azul:       #0f2a6e;
+  --azul-med:   #1a3d9e;
+  --azul-claro: #2554c7;
+  --negro:      #111111;
+  --gris-osc:   #444444;
+  --gris:       #777777;
+  --gris-cl:    #bbbbbb;
+  --blanco:     #ffffff;
+  --hueso:      #f6f3ef;
+  --hueso2:     #ebe7e0;
+  --bebas:  'Bebas Neue', impact, sans-serif;
+  --oswald: 'Oswald', sans-serif;
+  --body:   'Roboto Condensed', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--blanco); color: var(--negro); font-family: var(--body); overflow-x: hidden; }
+
+/* ── POLE BAR animada ── */
+.pole-bar {
+  height: 7px;
+  background: repeating-linear-gradient(90deg,
+    var(--rojo) 0, var(--rojo) 20px,
+    var(--blanco) 20px, var(--blanco) 40px,
+    var(--azul) 40px, var(--azul) 60px);
+  background-size: 60px 7px;
+  animation: poleAnim 2s linear infinite;
+}
+@keyframes poleAnim { to { background-position: 60px 0; } }
+
+/* ── DIVISOR ── */
+.div-deco {
+  height: 5px;
+  background: linear-gradient(90deg, var(--rojo) 0%, var(--azul) 50%, var(--negro) 100%);
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 7px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 44px;
+  background: var(--blanco);
+  border-bottom: 3px solid var(--rojo);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.09);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-icon {
+  width: 44px; height: 44px; background: var(--rojo);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--bebas); font-size: 1.35rem; color: var(--blanco); letter-spacing: 0.05em;
+}
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-logo-main { font-family: var(--bebas); font-size: 1.45rem; letter-spacing: 0.1em; color: var(--negro); }
+.nav-logo-sub  { font-family: var(--oswald); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--azul); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-family: var(--oswald); font-size: 0.74rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--negro); text-decoration: none;
+  border-bottom: 2px solid transparent; padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover { color: var(--rojo); border-bottom-color: var(--rojo); }
+.nav-wa {
+  display: flex; align-items: center; gap: 8px; background: #25d366; color: #000;
+  font-family: var(--oswald); font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 20px;
+  text-decoration: none; transition: background 0.3s;
+}
+.nav-wa:hover { background: #1aaa52; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 26px; height: 2px; background: var(--negro); display: block; transition: all 0.3s; }
+.mobile-menu {
+  position: fixed; inset: 0; background: var(--blanco); z-index: 90;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+  transform: translateX(100%); transition: transform 0.4s ease;
+  border-left: 6px solid var(--rojo);
+}
+.mobile-menu.open { transform: none; }
+.mobile-menu a {
+  font-family: var(--bebas); font-size: 3rem; letter-spacing: 0.08em;
+  color: var(--negro); text-decoration: none; transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--rojo); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; padding-top: 90px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: var(--blanco); position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(-55deg, transparent 0, transparent 38px,
+    rgba(15,42,110,0.04) 38px, rgba(15,42,110,0.04) 39px);
+}
+.hero-left {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 60px 50px 70px 60px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--azul); padding: 6px 18px; margin-bottom: 22px; width: fit-content;
+}
+.hero-badge span {
+  font-family: var(--oswald); font-size: 0.64rem;
+  letter-spacing: 0.26em; text-transform: uppercase; color: var(--blanco);
+}
+.hero-title {
+  font-family: var(--bebas);
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  line-height: 0.91; letter-spacing: 0.03em; color: var(--negro); margin-bottom: 22px;
+}
+.hero-title .acc-r { color: var(--rojo); display: block; }
+.hero-title .acc-b { color: var(--azul); display: block; }
+.hero-title .sub-name {
+  font-family: var(--oswald); font-size: clamp(1.4rem, 2.5vw, 2.4rem);
+  font-weight: 300; letter-spacing: 0.18em; color: var(--gris-osc); display: block; margin-top: 8px;
+}
+.hero-desc {
+  font-size: 1rem; font-weight: 300; color: var(--gris-osc);
+  line-height: 1.75; max-width: 400px; margin-bottom: 34px;
+  border-left: 4px solid var(--rojo); padding-left: 16px;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25d366; color: #000;
+  font-family: var(--oswald); font-size: 0.9rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 28px;
+  text-decoration: none; transition: background 0.3s, transform 0.2s;
+}
+.btn-wa:hover { background: #1aaa52; transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 2px solid var(--azul); color: var(--azul);
+  font-family: var(--oswald); font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 26px;
+  text-decoration: none; background: transparent; transition: background 0.3s, color 0.3s;
+}
+.btn-outline:hover { background: var(--azul); color: var(--blanco); }
+.hero-social { display: flex; align-items: center; gap: 14px; }
+.hero-social span {
+  font-family: var(--oswald); font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris);
+}
+.social-link {
+  width: 38px; height: 38px; border: 2px solid var(--gris-cl);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gris); text-decoration: none; transition: all 0.3s;
+}
+.social-link.fb:hover { border-color: var(--azul-claro); color: var(--azul-claro); }
+.social-link.ig:hover { border-color: var(--rojo); color: var(--rojo); }
+
+/* HERO RIGHT */
+.hero-right {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  padding: 60px 40px; background: var(--hueso); border-left: 4px solid var(--rojo);
+}
+.hero-visual-box { position: relative; width: 100%; max-width: 440px; }
+.hero-img-main {
+  width: 100%; aspect-ratio: 3/4; background: var(--hueso2);
+  border: 2px solid var(--azul);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px; position: relative;
+}
+.hero-img-main::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,42,110,0.1) 0%, transparent 55%);
+}
+.img-ph-icon { font-size: 5rem; opacity: 0.18; }
+.img-ph-text {
+  font-family: var(--oswald); font-size: 0.64rem;
+  letter-spacing: 0.28em; text-transform: uppercase; color: var(--gris);
+}
+.hero-pole {
+  position: absolute; left: -18px; top: 8%; bottom: 8%; width: 15px;
+  background: repeating-linear-gradient(180deg,
+    var(--rojo) 0, var(--rojo) 15px,
+    var(--blanco) 15px, var(--blanco) 30px,
+    var(--azul) 30px, var(--azul) 45px);
+  animation: poleVert 2s linear infinite; border-radius: 8px;
+}
+@keyframes poleVert { to { background-position: 0 45px; } }
+.hero-badge-float {
+  position: absolute; bottom: -18px; right: -18px;
+  background: var(--rojo); width: 108px; height: 108px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 4px solid var(--blanco);
+}
+.badge-num { font-family: var(--bebas); font-size: 2.8rem; color: var(--blanco); line-height: 1; }
+.badge-txt {
+  font-family: var(--oswald); font-size: 0.52rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.85); text-align: center;
+}
+
+/* ── STRIP ── */
+.strip { background: var(--azul); padding: 14px 0; overflow: hidden; }
+.strip-inner { display: flex; animation: stripScroll 18s linear infinite; white-space: nowrap; }
+.strip-item {
+  font-family: var(--bebas); font-size: 1.3rem; letter-spacing: 0.15em;
+  color: var(--blanco); padding: 0 24px;
+  display: inline-flex; align-items: center; gap: 24px;
+}
+.strip-item::after { content: '✦'; font-size: 0.55rem; color: var(--rojo); }
+@keyframes stripScroll { to { transform: translateX(-50%); } }
+
+/* ── BASE SECCIONES ── */
+section { padding: 90px 60px; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--oswald); font-size: 0.64rem;
+  letter-spacing: 0.34em; text-transform: uppercase; color: var(--rojo); margin-bottom: 14px;
+}
+.section-tag::before { content: ''; width: 24px; height: 2px; background: var(--rojo); }
+
+/* ── SOBRE CÉSAR ── */
+.sobre { background: var(--hueso); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.sobre-img-wrap { position: relative; }
+.sobre-img {
+  width: 100%; aspect-ratio: 3/4; background: var(--blanco);
+  border: 2px solid var(--azul); border-left: 5px solid var(--rojo);
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px;
+}
+.sobre-cert {
+  position: absolute; bottom: 28px; left: -22px;
+  background: var(--azul); border: 3px solid var(--rojo); padding: 16px 18px; max-width: 200px;
+}
+.cert-icon { font-size: 1.4rem; margin-bottom: 6px; display: block; }
+.cert-title {
+  font-family: var(--oswald); font-size: 0.64rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--rojo); margin-bottom: 4px;
+}
+.cert-text { font-size: 0.78rem; color: var(--blanco); line-height: 1.45; }
+.sobre-content h2 {
+  font-family: var(--bebas); font-size: clamp(3rem, 4.5vw, 4.5rem);
+  line-height: 0.94; color: var(--negro); letter-spacing: 0.03em; margin-bottom: 18px;
+}
+.sobre-content h2 .r { color: var(--rojo); }
+.sobre-content h2 .b { color: var(--azul); }
+.sobre-content p { color: var(--gris-osc); font-size: 0.95rem; line-height: 1.8; margin-bottom: 14px; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+.skill-item {
+  background: var(--blanco); border-left: 4px solid var(--azul);
+  border-bottom: 2px solid var(--rojo); padding: 14px 16px;
+}
+.skill-name {
+  font-family: var(--oswald); font-size: 0.74rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--negro); margin-bottom: 4px;
+}
+.skill-desc { font-size: 0.75rem; color: var(--gris); line-height: 1.5; }
+
+/* ── SERVICIOS ── */
+.servicios { background: var(--blanco); }
+.servicios-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 56px; }
+.servicios-head h2 {
+  font-family: var(--bebas); font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.94; color: var(--negro); letter-spacing: 0.03em;
+}
+.servicios-head h2 .r { color: var(--rojo); }
+.servicios-head h2 .b { color: var(--azul); }
+.servicios-head p { color: var(--gris-osc); font-size: 0.9rem; line-height: 1.8; }
+.srv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; background: var(--hueso2); }
+.srv-card {
+  background: var(--hueso); padding: 40px 30px;
+  position: relative; overflow: hidden; transition: background 0.3s;
+}
+.srv-card:hover { background: var(--blanco); }
+.srv-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--rojo), var(--azul));
+}
+.srv-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px;
+  background: var(--azul); transition: width 0.4s ease;
+}
+.srv-card:hover::after { width: 100%; }
+.srv-emoji { font-size: 2.4rem; display: block; margin-bottom: 14px; }
+.srv-titulo {
+  font-family: var(--bebas); font-size: 1.8rem; letter-spacing: 0.05em; color: var(--negro); margin-bottom: 4px;
+}
+.srv-sub {
+  font-family: var(--oswald); font-size: 0.61rem;
+  letter-spacing: 0.24em; text-transform: uppercase; color: var(--azul); margin-bottom: 12px;
+}
+.srv-desc { font-size: 0.85rem; color: var(--gris-osc); line-height: 1.7; margin-bottom: 18px; }
+.srv-lista { display: flex; flex-direction: column; gap: 5px; margin-bottom: 20px; }
+.srv-item {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px dashed var(--hueso2); padding-bottom: 5px;
+}
+.srv-item-name { font-size: 0.82rem; color: var(--negro); }
+.srv-item-price { font-family: var(--oswald); font-size: 0.95rem; font-weight: 700; color: var(--rojo); }
+.srv-tiempo {
+  font-family: var(--oswald); font-size: 0.62rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--azul);
+}
+.btn-srv {
+  display: block; margin-top: 18px; background: var(--azul); color: var(--blanco);
+  font-family: var(--oswald); font-size: 0.74rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 18px;
+  text-align: center; text-decoration: none; transition: background 0.3s;
+}
+.btn-srv:hover { background: var(--rojo); }
+
+/* ── FORMACIÓN ── */
+.formacion { background: var(--azul); position: relative; overflow: hidden; padding: 80px 60px; }
+.formacion::before {
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 280px; height: 280px; border: 36px solid rgba(255,255,255,0.07); border-radius: 50%;
+}
+.formacion::after {
+  content: ''; position: absolute; bottom: -30px; left: 22%;
+  width: 180px; height: 180px; border: 26px solid rgba(204,34,34,0.18); border-radius: 50%;
+}
+.form-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+.form-left h2 {
+  font-family: var(--bebas); font-size: clamp(3.5rem, 5vw, 5rem);
+  line-height: 0.9; color: var(--blanco); letter-spacing: 0.04em;
+}
+.form-left h2 .acc { color: var(--rojo); }
+.form-left p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-top: 16px; }
+.cert-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cert-card {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
+  border-top: 3px solid var(--rojo); padding: 22px 18px;
+}
+.cc-icon { font-size: 1.7rem; display: block; margin-bottom: 9px; }
+.cc-title {
+  font-family: var(--oswald); font-size: 0.88rem; font-weight: 600;
+  color: var(--blanco); margin-bottom: 7px; letter-spacing: 0.05em;
+}
+.cc-desc { font-size: 0.79rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+/* ── VIDEOS ── */
+.videos { background: var(--hueso); }
+.videos-head { text-align: center; margin-bottom: 48px; }
+.videos-head h2 {
+  font-family: var(--bebas); font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+  letter-spacing: 0.04em; color: var(--negro);
+}
+.videos-head h2 .r { color: var(--rojo); }
+.videos-head h2 .b { color: var(--azul); }
+.videos-head p { color: var(--gris); font-size: 0.9rem; margin-top: 10px; }
+.videos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+.video-card {
+  position: relative; aspect-ratio: 9/16;
+  background: var(--blanco); border: 2px solid var(--hueso2);
+  overflow: hidden; cursor: pointer; transition: border-color 0.3s;
+  display: block; text-decoration: none;
+}
+.video-card:hover { border-color: var(--rojo); }
+.video-card:hover .vc-overlay { opacity: 1; }
+.vc-thumb {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px;
+  background: var(--hueso2);
+}
+.vc-icon { font-size: 3rem; opacity: 0.2; }
+.vc-label {
+  font-family: var(--oswald); font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris);
+}
+.vc-overlay {
+  position: absolute; inset: 0; background: rgba(15,42,110,0.1);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+}
+.play-btn {
+  width: 56px; height: 56px; background: var(--rojo); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; color: var(--blanco); padding-left: 4px;
+}
+.vc-title {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 40px 14px 14px;
+  background: linear-gradient(to top, rgba(15,42,110,0.88), transparent);
+  font-family: var(--oswald); font-size: 0.84rem; font-weight: 500;
+  color: var(--blanco); letter-spacing: 0.05em;
+}
+.vc-tag {
+  font-family: var(--oswald); font-size: 0.57rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: #ffaaaa;
+  display: block; margin-bottom: 4px;
+}
+.videos-social {
+  display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; padding-top: 18px;
+}
+.videos-social p {
+  font-family: var(--oswald); font-size: 0.74rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--negro);
+}
+.btn-social {
+  display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; text-decoration: none;
+  font-family: var(--oswald); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s;
+}
+.btn-ig { border: 2px solid var(--rojo); color: var(--rojo); }
+.btn-ig:hover { background: var(--rojo); color: var(--blanco); }
+.btn-fb { border: 2px solid var(--azul); color: var(--azul); }
+.btn-fb:hover { background: var(--azul); color: var(--blanco); }
+.btn-social svg { width: 17px; height: 17px; fill: currentColor; }
+
+/* ── RESERVAR ── */
+.reservar { background: var(--blanco); }
+.reservar-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.res-info h2 {
+  font-family: var(--bebas); font-size: clamp(3rem, 4.5vw, 4.5rem);
+  line-height: 0.94; color: var(--negro); letter-spacing: 0.04em; margin-bottom: 18px;
+}
+.res-info h2 .r { color: var(--rojo); }
+.res-info h2 .b { color: var(--azul); }
+.res-info p { color: var(--gris-osc); font-size: 0.9rem; line-height: 1.8; margin-bottom: 28px; }
+.wa-big {
+  display: flex; align-items: center; gap: 16px; background: #25d366;
+  padding: 20px 26px; text-decoration: none; width: 100%; transition: background 0.3s;
+}
+.wa-big:hover { background: #1aaa52; }
+.wa-big-icon { font-size: 2.1rem; }
+.wa-big-text .wa-label {
+  font-family: var(--oswald); font-size: 0.58rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.55);
+}
+.wa-big-text .wa-num { font-family: var(--bebas); font-size: 1.6rem; letter-spacing: 0.1em; color: #000; }
+.contact-list { margin-top: 22px; display: flex; flex-direction: column; gap: 12px; }
+.c-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 12px 0; border-bottom: 1px solid var(--hueso2);
+}
+.c-icon {
+  width: 38px; height: 38px; flex-shrink: 0; background: var(--hueso);
+  border-left: 3px solid var(--rojo);
+  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+}
+.c-label {
+  font-family: var(--oswald); font-size: 0.59rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--azul); margin-bottom: 4px;
+}
+.c-val { font-size: 0.88rem; color: var(--negro); line-height: 1.45; }
+.res-form {
+  background: var(--hueso);
+  border: 1px solid var(--hueso2);
+  border-top: 4px solid var(--rojo);
+  border-right: 3px solid var(--azul);
+  padding: 40px;
+}
+.form-head { font-family: var(--bebas); font-size: 1.8rem; letter-spacing: 0.05em; color: var(--negro); margin-bottom: 4px; }
+.form-subhead {
+  font-family: var(--oswald); font-size: 0.61rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--azul); margin-bottom: 26px;
+}
+.fg { margin-bottom: 17px; }
+.fg label {
+  display: block; font-family: var(--oswald); font-size: 0.61rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris); margin-bottom: 8px;
+}
+.fg input, .fg select {
+  width: 100%; background: var(--blanco);
+  border: 1px solid var(--hueso2); border-bottom: 2px solid var(--azul);
+  color: var(--negro); padding: 11px 14px;
+  font-family: var(--body); font-size: 0.9rem;
+  outline: none; transition: border-color 0.3s; appearance: none;
+}
+.fg input:focus, .fg select:focus { border-color: var(--rojo); background: #fff8f8; }
+.fg select option { background: var(--blanco); }
+.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.btn-form-wa {
+  width: 100%; background: #25d366; color: #000; border: none; padding: 15px;
+  font-family: var(--oswald); font-size: 0.84rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.3s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.btn-form-wa:hover { background: #1aaa52; }
+.form-note { font-size: 0.7rem; color: var(--gris); text-align: center; margin-top: 11px; line-height: 1.5; }
+
+/* ── MAPA ── */
+.mapa { background: var(--hueso); padding: 0; }
+.mapa-inner { display: grid; grid-template-columns: 1fr 2fr; }
+.mapa-info {
+  padding: 60px 46px; background: var(--azul);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.mapa-info .section-tag { color: rgba(255,255,255,0.55); }
+.mapa-info .section-tag::before { background: var(--rojo); }
+.mapa-info h2 {
+  font-family: var(--bebas); font-size: 2.5rem; letter-spacing: 0.05em; color: var(--blanco); margin-bottom: 28px;
+}
+.mapa-info h2 .r { color: var(--rojo); }
+.mapa-data { display: flex; flex-direction: column; gap: 20px; }
+.md-item { display: flex; gap: 14px; align-items: flex-start; }
+.md-icon { font-size: 1.2rem; width: 34px; text-align: center; flex-shrink: 0; margin-top: 2px; }
+.md-label {
+  font-family: var(--oswald); font-size: 0.58rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 4px;
+}
+.md-val { font-size: 0.87rem; color: var(--blanco); line-height: 1.5; }
+.btn-gmaps {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--rojo); color: var(--blanco); padding: 12px 22px; margin-top: 26px;
+  font-family: var(--oswald); font-size: 0.74rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.3s; width: fit-content;
+}
+.btn-gmaps:hover { background: var(--rojo-osc); }
+.mapa-embed {
+  width: 100%; height: 400px; min-height: 400px; display: block; border: none;
+  filter: grayscale(25%) contrast(1.05);
+}
+
+/* ── FOOTER ── */
+footer { background: var(--negro); border-top: 4px solid var(--rojo); padding: 60px 60px 28px; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+.footer-brand .fl {
+  font-family: var(--bebas); font-size: 2.1rem; letter-spacing: 0.1em;
+  color: var(--blanco); text-decoration: none; display: block; margin-bottom: 6px;
+}
+.footer-brand .fl span { color: var(--rojo); }
+.footer-brand p { font-size: 0.82rem; color: var(--gris); line-height: 1.75; max-width: 270px; margin-top: 8px; }
+.footer-brand .f-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-brand .f-social a {
+  width: 36px; height: 36px; border: 1px solid var(--gris-osc);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gris); text-decoration: none; font-size: 0.85rem; transition: all 0.3s;
+}
+.footer-brand .f-social a.fb:hover { border-color: var(--azul-claro); color: var(--azul-claro); }
+.footer-brand .f-social a.ig:hover { border-color: var(--rojo); color: var(--rojo); }
+.footer-brand .f-social a.wa:hover { border-color: #25d366; color: #25d366; }
+.footer-col h4 {
+  font-family: var(--oswald); font-size: 0.64rem;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--azul-claro); margin-bottom: 17px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 0.82rem; color: var(--gris); text-decoration: none; transition: color 0.2s; }
+.footer-col a:hover { color: var(--blanco); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-copy { font-size: 0.7rem; color: var(--gris-osc); }
+.footer-credits { font-size: 0.7rem; color: var(--azul-claro); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+
+/* ── WA FLOTANTE ── */
+.wa-float {
+  position: fixed; bottom: 26px; right: 26px; z-index: 200;
+  width: 58px; height: 58px; background: #25d366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+  text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  animation: waPulse 2.5s ease-in-out infinite; transition: transform 0.2s;
+}
+.wa-float:hover { transform: scale(1.1); }
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.35); }
+  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.65), 0 0 0 12px rgba(37,211,102,0.1); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  nav { padding: 13px 22px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 65px 22px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .sobre { grid-template-columns: 1fr; gap: 38px; padding: 65px 22px; }
+  .servicios-head { grid-template-columns: 1fr; }
+  .srv-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-inner { grid-template-columns: 1fr; gap: 38px; }
+  .formacion { padding: 60px 22px; }
+  .cert-cards { grid-template-columns: 1fr; }
+  .videos-grid { grid-template-columns: 1fr 1fr; }
+  .reservar-inner { grid-template-columns: 1fr; gap: 38px; }
+  .mapa-inner { grid-template-columns: 1fr; }
+  .mapa-embed { height: 300px; }
+  .mapa-info { padding: 40px 22px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .fg-row { grid-template-columns: 1fr; }
+  .res-form { padding: 26px 18px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (max-width: 640px) {
+  .hero-title { font-size: 3.4rem; }
+  .videos-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; }
+  .btn-wa, .btn-outline { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/5215540410475?text=Hola%20César,%20quiero%20reservar%20una%20cita" class="wa-float" target="_blank" title="WhatsApp">💬</a>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre" onclick="closeMenu()">Sobre César</a>
+  <a href="#servicios" onclick="closeMenu()">Servicios</a>
+  <a href="#videos" onclick="closeMenu()">Videos</a>
+  <a href="#reservar" onclick="closeMenu()">Reservar</a>
+  <a href="#ubicacion" onclick="closeMenu()">Ubicación</a>
+</div>
+
+<div class="pole-bar" style="position:fixed;top:0;left:0;right:0;z-index:101;"></div>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="assets/images/logo.png" alt="Barber Shot César" style="width:54px;height:54px;object-fit:contain;border-radius:50%;">
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">Barber Shot César</span>
+      <span class="nav-logo-sub">Nuevo Ixcatlán · Desde 2025</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre César</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#reservar">Contacto</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+  </ul>
+  <a href="https://wa.me/5215540410475?text=Hola%20César,%20quiero%20reservar%20una%20cita" class="nav-wa" target="_blank">📱 Reservar por WhatsApp</a>
+  <div class="hamburger" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-left reveal">
+    <div class="hero-badge"><span>✦ Nuevo Ixcatlán · Veracruz · Est. 2025</span></div>
+    <h1 class="hero-title">
+      CORTES
+      <span class="acc-r">CON</span>
+      <span class="acc-b">CARÁCTER</span>
+      <span class="sub-name">— Barber Shot César</span>
+    </h1>
+    <p class="hero-desc">Especialistas en cortes modernos, arreglo de barba y afeitado clásico con navaja. Técnica formada en la Ciudad de México. Experiencia, precisión y estilo en cada servicio.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/5215540410475?text=Hola%20César,%20quiero%20reservar%20una%20cita" class="btn-wa" target="_blank">💬 Reservar por WhatsApp</a>
+      <a href="#servicios" class="btn-outline">Ver Servicios →</a>
+    </div>
+    <div class="hero-social">
+      <span>Síguenos:</span>
+      <a href="#" class="social-link fb" id="fb-hero" title="Facebook">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" class="social-link ig" id="ig-hero" title="Instagram">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual-box">
+      <div class="hero-pole"></div>
+      <div class="hero-img-main" style="overflow:hidden;">
+        <img src="assets/images/foto2.jpg" alt="César — Barber Shot" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">Cortes Modernos</span><span class="strip-item">Arreglo de Barba</span>
+    <span class="strip-item">Afeitado con Navaja</span><span class="strip-item">Fade Degradado</span>
+    <span class="strip-item">Formado en CDMX</span><span class="strip-item">Nuevo Ixcatlán</span>
+    <span class="strip-item">Cortes Modernos</span><span class="strip-item">Arreglo de Barba</span>
+    <span class="strip-item">Afeitado con Navaja</span><span class="strip-item">Fade Degradado</span>
+    <span class="strip-item">Formado en CDMX</span><span class="strip-item">Nuevo Ixcatlán</span>
+  </div>
+</div>
+<div class="div-deco"></div>
+
+<!-- SOBRE CÉSAR -->
+<section class="sobre reveal" id="sobre">
+  <div class="sobre-img-wrap">
+    <div class="sobre-img" style="overflow:hidden;padding:0;">
+      <img src="assets/images/foto1.jpg" alt="César en Eleganza Academy" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+    </div>
+    <div class="sobre-cert">
+      <span class="cert-icon">🏆</span>
+      <div class="cert-title">Eleganza Academy</div>
+      <div class="cert-text">Formado con instructores colombianos — técnicas profesionales de barbería</div>
+    </div>
+  </div>
+  <div class="sobre-content">
+    <p class="section-tag">Tu Barbero</p>
+    <h2>CÉSAR,<br><span class="r">ARTESANO</span><br><span class="b">DEL ESTILO</span></h2>
+    <p>César perfeccionó el arte de la barbería en <strong>Eleganza Academy</strong>, escuela con instructores colombianos de alto nivel profesional. Combina técnicas clásicas con las tendencias actuales del corte masculino, trayendo ese nivel de excelencia a Nuevo Ixcatlán.</p>
+    <p>Cada cliente recibe atención personalizada. Porque un buen corte no es casualidad — es oficio.</p>
+    <div class="skills-grid">
+      <div class="skill-item"><div class="skill-name">✂️ Corte Moderno</div><div class="skill-desc">Fades técnicos, undercuts y texturas contemporáneas</div></div>
+      <div class="skill-item"><div class="skill-name">🪒 Navaja Clásica</div><div class="skill-desc">Afeitado con espuma caliente y cuchilla de precisión</div></div>
+      <div class="skill-item"><div class="skill-name">🧔 Barba Definida</div><div class="skill-desc">Perfilado, degradado y tratamiento completo de barba</div></div>
+      <div class="skill-item"><div class="skill-name">🎓 Formación CDMX</div><div class="skill-desc">Certificado en técnicas avanzadas en Ciudad de México</div></div>
+    </div>
+  </div>
+</section>
+<div class="div-deco"></div>
+
+<!-- SERVICIOS -->
+<section class="servicios reveal" id="servicios">
+  <div class="servicios-head">
+    <div>
+      <p class="section-tag">Lo que Hacemos</p>
+      <h2>NUESTROS<br><span class="r">SERVI</span><span class="b">CIOS</span></h2>
+    </div>
+    <p>Servicios realizados con productos de calidad, técnica depurada y la dedicación que mereces. Precios accesibles, resultados de primer nivel.</p>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card reveal d1">
+      <span class="srv-emoji">✂️</span>
+      <div class="srv-titulo">CORTES MODERNOS</div>
+      <div class="srv-sub">Hair Cutting · Fade · Textura</div>
+      <p class="srv-desc">Cortes actuales adaptados a tu tipo de cabello, rostro y estilo. Fade suave o fuerte, texturas, undercut, pompadour y más.</p>
+      <div class="srv-lista">
+        <div class="srv-item"><span class="srv-item-name">Corte Básico + Peinado</span></div>
+        <div class="srv-item"><span class="srv-item-name">Fade / Degradado</span></div>
+        <div class="srv-item"><span class="srv-item-name">Corte + Lavado</span></div>
+        <div class="srv-item"><span class="srv-item-name">Texturizado con Navaja</span></div>
+      </div>
+      <div class="srv-tiempo">⏱ 30 – 50 minutos</div>
+      <a href="#reservar" class="btn-srv">📋 Agendar este Servicio</a>
+    </div>
+    <div class="srv-card reveal d2">
+      <span class="srv-emoji">🪒</span>
+      <div class="srv-titulo">BARBA Y AFEITADO</div>
+      <div class="srv-sub">Beard · Navaja Clásica</div>
+      <p class="srv-desc">El ritual del afeitado clásico con navaja recta, espuma caliente y aceites esenciales. Perfilado para una barba impecable y bien definida.</p>
+      <div class="srv-lista">
+        <div class="srv-item"><span class="srv-item-name">Perfilado de Barba</span></div>
+        <div class="srv-item"><span class="srv-item-name">Afeitado Completo con Navaja</span></div>
+        <div class="srv-item"><span class="srv-item-name">Barba + Hidratación</span></div>
+        <div class="srv-item"><span class="srv-item-name">Ritual Completo de Barba</span></div>
+      </div>
+      <div class="srv-tiempo">⏱ 25 – 45 minutos</div>
+      <a href="#reservar" class="btn-srv">📋 Agendar este Servicio</a>
+    </div>
+    <div class="srv-card reveal d3">
+      <span class="srv-emoji">💈</span>
+      <div class="srv-titulo">COMBO COMPLETO</div>
+      <div class="srv-sub">Corte + Barba + Más</div>
+      <p class="srv-desc">La experiencia completa del barbero. Corte de cabello, arreglo de barba y acabados con productos premium para eventos o el día a día.</p>
+      <div class="srv-lista">
+        <div class="srv-item"><span class="srv-item-name">Combo Corte + Barba</span></div>
+        <div class="srv-item"><span class="srv-item-name">Combo + Lavado Premium</span></div>
+        <div class="srv-item"><span class="srv-item-name">Pack Novio / Evento</span></div>
+        <div class="srv-item"><span class="srv-item-name">Pack Quinceañero / Boda</span></div>
+      </div>
+      <div class="srv-tiempo">⏱ 60 – 90 minutos</div>
+      <a href="#reservar" class="btn-srv">📋 Agendar este Servicio</a>
+    </div>
+    <div class="srv-card reveal d1">
+      <span class="srv-emoji">🪮</span>
+      <div class="srv-titulo">PERFILADO DE CEJA</div>
+      <div class="srv-sub">Eyebrow · Definición · Navaja</div>
+      <p class="srv-desc">Perfilado preciso de cejas con navaja o hilo para un acabado limpio y definido que complementa cualquier corte.</p>
+      <div class="srv-lista">
+        <div class="srv-item"><span class="srv-item-name">Perfilado con Navaja</span></div>
+        <div class="srv-item"><span class="srv-item-name">Perfilado con Hilo</span></div>
+        <div class="srv-item"><span class="srv-item-name">Cejas + Corte (combo)</span></div>
+      </div>
+      <div class="srv-tiempo">⏱ 10 – 15 minutos</div>
+      <a href="#reservar" class="btn-srv">📋 Agendar este Servicio</a>
+    </div>
+  </div>
+</section>
+<div class="div-deco"></div>
+
+<!-- FORMACIÓN -->
+<section class="formacion reveal" id="formacion">
+  <div class="form-inner">
+    <div class="form-left">
+      <p class="section-tag" style="color:rgba(255,255,255,0.55)">Credenciales</p>
+      <h2>FORMADO EN<br><span class="acc">ELEGANZA</span><br>ACADEMY</h2>
+      <p>César se formó en Eleganza Academy, escuela con instructores colombianos super profesionales. Cada técnica aprendida al más alto nivel para traer ese estilo a Nuevo Ixcatlán.</p>
+    </div>
+    <div class="cert-cards">
+      <div class="cert-card"><span class="cc-icon">🎓</span><div class="cc-title">Eleganza Academy</div><div class="cc-desc">Formación profesional con instructores colombianos de alto nivel en técnicas de barbería.</div></div>
+      <div class="cert-card"><span class="cc-icon">🪒</span><div class="cc-title">Técnica de Navaja Clásica</div><div class="cc-desc">Especialización en afeitado tradicional, perfilado y cuidado facial masculino.</div></div>
+      <div class="cert-card"><span class="cc-icon">📐</span><div class="cc-title">Fade y Degradados</div><div class="cc-desc">Dominio de degradado suave, medio y fuerte con máquina, tijera y navaja.</div></div>
+      <div class="cert-card"><span class="cc-icon">⭐</span><div class="cc-title">Estilo Colombiano</div><div class="cc-desc">Técnicas de vanguardia traídas directamente de la escuela de barbería más exigente.</div></div>
+    </div>
+  </div>
+</section>
+<div class="div-deco"></div>
+
+<!-- VIDEOS -->
+<section class="videos reveal" id="videos">
+  <div class="videos-head">
+    <p class="section-tag" style="justify-content:center;">Nuestro Trabajo</p>
+    <h2>MIRA CÓMO <span class="r">QUEDAN</span><br>LOS <span class="b">CORTES</span></h2>
+    <p>Agrega tus videos de YouTube, TikTok o Reels. Estos espacios son para tu contenido.</p>
+  </div>
+  <div class="videos-grid">
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/P-yLt3yVkok" title="Corte 1 — Barber Shop César" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/LsbR3tXnxW0" title="Corte 2 — Barber Shop César" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/zG1fr33cd1k" title="Corte 3 — Barber Shot César" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
+    </div>
+  </div>
+  <div class="videos-social">
+    <p>Síguenos para más videos:</p>
+    <a href="#" class="btn-social btn-ig" id="ig-vid">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Instagram
+    </a>
+    <a href="#" class="btn-social btn-fb" id="fb-vid">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </a>
+  </div>
+</section>
+<div class="div-deco"></div>
+
+<!-- RESERVAR -->
+<section class="reservar reveal" id="reservar">
+  <div class="reservar-inner">
+    <div class="res-info">
+      <p class="section-tag">Agenda tu Cita</p>
+      <h2>RESERVA<br>POR <span class="r">WHATS</span><span class="b">APP</span></h2>
+      <p>Sin complicaciones. Manda un mensaje y confirma tu cita en minutos. César responderá personalmente con el horario que mejor te convenga.</p>
+      <a href="https://wa.me/5215540410475?text=Hola%20César,%20quiero%20reservar%20una%20cita.%20Mi%20nombre%20es..." class="wa-big" target="_blank">
+        <span class="wa-big-icon">💬</span>
+        <div class="wa-big-text">
+          <span class="wa-label">Escríbenos directo al</span>
+          <span class="wa-num">+52 55 4041 0475</span>
+        </div>
+        <span style="margin-left:auto;font-size:1.2rem;">→</span>
+      </a>
+      <div class="contact-list">
+        <div class="c-item"><div class="c-icon">📍</div><div><div class="c-label">Dirección</div><div class="c-val">Calle Constitución esq. 5 de Febrero<br>Col. Tercera Sección, Nuevo Ixcatlán, Veracruz.</div></div></div>
+        <div class="c-item"><div class="c-icon">🕐</div><div><div class="c-label">Horario</div><div class="c-val">Lun – Sáb: 9:00 am – 8:00 pm · Dom: 10:00 – 4:00 pm</div></div></div>
+        <div class="c-item"><div class="c-icon">📱</div><div><div class="c-label">WhatsApp / Llamada</div><div class="c-val">+52 152 000 0000</div></div></div>
+      </div>
+    </div>
+    <div class="res-form">
+      <div class="form-head">AGENDA TU VISITA</div>
+      <div class="form-subhead">Confirmación inmediata por WhatsApp</div>
+      <div class="fg"><label>Tu Nombre</label><input type="text" placeholder="Ej. Juan Pérez" id="f-nombre"></div>
+      <div class="fg"><label>Número de WhatsApp</label><input type="tel" placeholder="+52 000 000 0000" id="f-tel"></div>
+      <div class="fg">
+        <label>Servicio que Deseas</label>
+        <select id="f-srv">
+          <option value="" disabled selected>— Elige un servicio —</option>
+          <option>✂️ Corte Básico + Peinado</option>
+          <option>✂️ Fade / Degradado</option>
+          <option>✂️ Corte + Lavado</option>
+          <option>✂️ Texturizado con Navaja</option>
+          <option>🪒 Perfilado de Barba</option>
+          <option>🪒 Afeitado Completo con Navaja</option>
+          <option>🪒 Barba + Hidratación</option>
+          <option>🪒 Ritual Completo de Barba</option>
+          <option>💈 Combo Corte + Barba</option>
+          <option>💈 Combo + Lavado Premium</option>
+          <option>💈 Pack Novio / Evento</option>
+          <option>💈 Pack Quinceañero / Boda</option>
+          <option>🪮 Perfilado de Ceja con Navaja</option>
+          <option>🪮 Perfilado de Ceja con Hilo</option>
+          <option>🪮 Cejas + Corte (combo)</option>
+        </select>
+      </div>
+      <div class="fg-row">
+        <div class="fg"><label>Fecha Preferida</label><input type="date" id="f-fecha"></div>
+        <div class="fg">
+          <label>Hora Preferida</label>
+          <select id="f-hora">
+            <option value="" disabled selected>— Hora —</option>
+            <option>9:00 am</option><option>10:00 am</option><option>11:00 am</option>
+            <option>12:00 pm</option><option>1:00 pm</option><option>3:00 pm</option>
+            <option>4:00 pm</option><option>5:00 pm</option><option>6:00 pm</option><option>7:00 pm</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-form-wa" onclick="enviarWA()">💬 Enviar Reserva por WhatsApp →</button>
+      <p class="form-note">Al hacer clic se abrirá WhatsApp con tu información lista para enviar a César.</p>
+    </div>
+  </div>
+</section>
+<div class="div-deco"></div>
+
+<!-- MAPA -->
+<section class="mapa" id="ubicacion">
+  <div class="mapa-inner">
+    <div class="mapa-info reveal">
+      <p class="section-tag">Encuéntranos</p>
+      <h2>NUESTRA<br><span class="r">UBICACIÓN</span></h2>
+      <div class="mapa-data">
+        <div class="md-item"><span class="md-icon">📍</span><div><div class="md-label">Dirección Exacta</div><div class="md-val">Calle Constitución esquina 5 de Febrero<br>Colonia Tercera Sección<br>Nuevo Ixcatlán, Veracruz, México</div></div></div>
+        <div class="md-item"><span class="md-icon">🕐</span><div><div class="md-label">Horario</div><div class="md-val">Lunes a Sábado: 9:00 – 20:00<br>Domingos: 10:00 – 16:00</div></div></div>
+        <div class="md-item"><span class="md-icon">🅿️</span><div><div class="md-label">Acceso</div><div class="md-val">Fácil acceso en el centro del municipio</div></div></div>
+      </div>
+      <a href="https://maps.google.com/?q=Calle+Constitucion+esquina+5+de+Febrero,+Col+Tercera+Seccion,+Nuevo+Ixcatlan,+Veracruz,+Mexico" class="btn-gmaps" target="_blank">🗺️ Abrir en Google Maps</a>
+    </div>
+    <iframe class="mapa-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15291!2d-96.5!3d18.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c7e1234abcdef0%3A0xabcdef1234567890!2sNuevo%20Ixcatl%C3%A1n%2C%20Veracruz!5e0!3m2!1ses!2smx!4v1710000000000!5m2!1ses!2smx"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Ubicación Barber Shop César — Nuevo Ixcatlán">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="fl">BARBER SHOP <span>CÉSAR</span></a>
+      <p>Cortes modernos, barba y afeitado clásico en Nuevo Ixcatlán, Veracruz. Técnica formada en Ciudad de México. Reserva por WhatsApp.</p>
+      <div class="f-social">
+        <a href="#" class="fb" id="fb-foot" title="Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="ig" id="ig-foot" title="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/5215540410475" class="wa" target="_blank" title="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#">Cortes Modernos</a></li>
+        <li><a href="#">Fade / Degradado</a></li>
+        <li><a href="#">Arreglo de Barba</a></li>
+        <li><a href="#">Afeitado con Navaja</a></li>
+        <li><a href="#">Combos Completos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">📍 Nuevo Ixcatlán, Veracruz</a></li>
+        <li><a href="https://wa.me/5215540410475" target="_blank">📱 WhatsApp</a></li>
+        <li><a href="#" id="fb-footer2">📘 Facebook</a></li>
+        <li><a href="#" id="ig-footer2">📸 Instagram</a></li>
+        <li><a href="https://maps.google.com/?q=Nuevo+Ixcatlan+Veracruz" target="_blank">🗺️ Google Maps</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Barber Shot César · Nuevo Ixcatlán, Veracruz · Todos los derechos reservados</p>
+    <p class="footer-credits">Sitio web desarrollado por <strong style="color:var(--blanco);">Felipe Norberto Marcelino</strong> · Eleganza Academy 🎓</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow =
+    window.scrollY > 50 ? '0 3px 18px rgba(0,0,0,0.11)' : '';
+});
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu()  { document.getElementById('mobileMenu').classList.remove('open'); }
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+function enviarWA() {
+  const nombre = document.getElementById('f-nombre').value || 'Sin nombre';
+  const tel    = document.getElementById('f-tel').value    || 'No indicado';
+  const srv    = document.getElementById('f-srv').value    || 'No seleccionado';
+  const fecha  = document.getElementById('f-fecha').value  || 'Flexible';
+  const hora   = document.getElementById('f-hora').value   || 'Flexible';
+  const msg = `Hola César 👋, quiero reservar una cita:\n\n Nombre: ${nombre}\n Tel: ${tel}\n Servicio: ${srv}\n📅 Fecha: ${fecha}\n⏰ Hora: ${hora}\n\n¡Gracias!`;
+  window.open('https://wa.me/5215540410475?text=' + encodeURIComponent(msg), '_blank');
+}
+const di = document.getElementById('f-fecha');
+if (di) di.min = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
